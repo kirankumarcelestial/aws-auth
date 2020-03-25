@@ -16,6 +16,9 @@ jobs:
       - go test -v ./... -coverprofile ./coverage.txt
       - bash <(curl -s https://codecov.io/bash)
 
+    - stage: build
+      script:
+        - go build
     - stage: publish-image
       if: type IN (push)
       script:
